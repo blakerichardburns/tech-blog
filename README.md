@@ -17,7 +17,7 @@ https://github.com/blakerichardburns/tech-blog
   * [Questions](#questions)
 
   ## Installation Instructions
-
+express-handlebars, MySQL2, Sequelize, Express, dotenv, bcrypt, express-session, connect-session-sequelize
 
   ## Questions
   For any inquiries, spam by inbox here: blakerichardburns@gmail.com
