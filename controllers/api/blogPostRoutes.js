@@ -17,6 +17,23 @@ router.post('/', authorized, async (request, response) => {
     }
 });
 
+router.put('/:id', authorized, async (request, response) => {
+    try {
+        const blogPostData = await BlogPost.update(request.body, {
+            where: {
+                id: request.params.id,
+            },
+        });
+        if (!blogPostData[0]) {
+            response.status(404).json({ message: "Post not found..." });
+            return;
+        }
+        response.status(200).json(blogPostData);
+    } catch (error) {
+        response.status(500).json(error);
+    }
+});
+
 router.delete('/:id', authorized, async (request, response) => {
     try {
         const blogPostData = await BlogPost.destroy({
