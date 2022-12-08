@@ -11,7 +11,7 @@ BlogPost.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    post_name: {
+    post_title: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-auto">
+        <h2>{{userName}}'s Blog Posts</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        <h3>Post a New Blog:</h3>
+
+        <form class="form new-blog-post">
+            <div class="forms">
+                <label for="post-title">Title:</label>
+                <input class="form-input" type="text" id="post-title" name="post-title" />
+            </div>
+            <div class="forms">
+                <label for="post-content">Content:</label>
+                <textarea class="form-input" id="post-content" name="post-content"></textarea>
+            </div>
+            <div class="forms">
+                <button type="submit" class="btn btn-primary">Post!</button>
+            </div>
+        </form>
+    </div>
+
+    {{#if blogPosts.length}}
+    <div class="col-md-8 blogpost-list">
+        <h3>Previous Posts:</h3>
+
+        {{#each blogPosts as |blogPost|}}
+        <div class="row">
+            <div class="col-md-8">
+                <h4><a href="/blogPost/{{blogPost.id}}">{{blogPost.post_title}}</a></h4>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-sm" data-id="{{blogPost.id}}">Update Post</button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-sm btn-danger" data-id="{{blogPost.id}}">Delete Post</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+
+<script src="/public/js/blogPost.js"
