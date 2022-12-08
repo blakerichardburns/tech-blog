@@ -1,4 +1,4 @@
-const loginIn = async (event) => {
+const logIn = async (event) => {
   event.preventDefault();
 
   const userName = document.querySelector('#username').value.trim();
@@ -41,6 +41,6 @@ const signUp = async (event) => {
   }
 };
 
-document.querySelector('.login-info').addEventListener('submit', loginIn);
+document.querySelector('.login-info').addEventListener('submit', logIn);
 
 document.querySelector('.signup-info').addEventListener('submit', signUp);
