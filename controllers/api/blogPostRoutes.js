@@ -4,11 +4,11 @@ const { request } = require('http');
 const { BlogPost, Comment } = require('../../models');
 const authorized = require('../../utils/authorization');
 
-router.post('/', authorized, async (request, response) => {
+router.post('/', async (request, response) => {
   try {
     const newBlogPost = await BlogPost.create({
       ...request.body,
-      user_id: request.statusMessage.user_id,
+      user_id: request.session.user_id,
     });
 
     response.status(200).json(newBlogPost);

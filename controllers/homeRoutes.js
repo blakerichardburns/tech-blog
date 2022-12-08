@@ -16,14 +16,14 @@ router.get('/', async (request, response) => {
 
         const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
 
-        response.render('home', { blogPosts, loggedIn: request.session.loggedIn });
+        response.render('home', { blogPosts, logged_in: request.session.logged_in });
     } catch (error) {
         console.log(error);
         response.status(500).json(error);
     }
 });
 
-router.get('/blogPost/:id', async (request, response) => {
+router.get('/blogpost/:id', async (request, response) => {
     try {
         const blogPostData = await BlogPost.findByPk(request.params.id, {
             include: [
@@ -53,7 +53,7 @@ router.get('/dashboard', authorization, async (request, response) => {
     try {
         const userData = await User.findByPk(request.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: BlogPost, Comment }],
+            include: [{ model: BlogPost }],
         });
 
         const user = userData.get({ plain: true });
@@ -67,13 +67,13 @@ router.get('/dashboard', authorization, async (request, response) => {
     }
 });
 
-// router.get('/login,' (request, response) => {
-//     if (request.session.logged_in) {
-//         response.redirect('/dashboard');
-//         return;
-//     }
+router.get('/signup-login', (request, response) => {
+    if (request.session.logged_in) {
+        response.redirect('/dashboard');
+        return;
+    }
 
-//     response.render('signup-login');
-// });
+    response.render('signup-login');
+});
 
 module.exports = router;

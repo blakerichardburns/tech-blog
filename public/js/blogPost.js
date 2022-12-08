@@ -82,27 +82,27 @@ const newComment = async (event) => {
   }
 };
 
-const updateComment = async (event) => {
-  const comment = document.querySelector('comment').value.trim();
+// const updateComment = async (event) => {
+//   const comment = document.querySelector('comment').value.trim();
 
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/comments/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify({ comment }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+//     const response = await fetch(`/api/comments/${id}`, {
+//       method: 'PUT',
+//       body: JSON.stringify({ comment }),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     });
 
-    if (response.ok) {
-      document.location.replace('/comments');
-    } else {
-      alert('Error: update failed');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/comments');
+//     } else {
+//       alert('Error: update failed');
+//     }
+//   }
+// };
 
 const deleteComment = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -111,7 +111,7 @@ const deleteComment = async (event) => {
     const response = await fetch(`/api/comments/${id}`, {
       method: 'DELETE',
     });
-
+    
     if (response.ok) {
       document.location.replace('/comments');
     } else {
@@ -128,6 +128,6 @@ document.querySelector('#delete-post-button').addEventListener('click', deletePo
 
 document.querySelector('.new-comment').addEventListener('submit', newComment);
 
-document.querySelector('#update-comment-button').addEventListener('click', updateComment);
+// document.querySelector('#update-comment-button').addEventListener('click', updateComment);
 
 document.querySelector('#delete-post-button').addEventListener('click', deleteComment);

@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const expressHandlebars = require('express-handlebars');
 const routes = require('./controllers');
-const date = require('./utils/date');
+const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const exp = require('constants');
@@ -12,7 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const handlebars = expressHandlebars.create({ date });
+const handlebars = expressHandlebars.create({ helpers });
 
 const userSession = {
   secret: process.env.SESSION_SECRET,
