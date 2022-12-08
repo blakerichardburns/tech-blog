@@ -15,18 +15,18 @@ const PORT = process.env.PORT || 3001;
 const handlebars = expressHandlebars.create({ date });
 
 const userSession = {
-    secret: '',
-    cookie: {
-        maxAge: 900000,
-        httpOnly: true,
-        secure: false,
-        sameSite: 'strict',
-    },
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
+  secret: process.env.SESSION_SECRET,
+  cookie: {
+    maxAge: 900000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 app.use(session(userSession));
@@ -41,5 +41,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log("Now Listening..."));
+  app.listen(PORT, () => console.log('Now Listening...'));
 });
