@@ -58,7 +58,7 @@ router.post('/', authorized, async (request, response) => {
   try {
     const newComment = await Comment.create({
       ...request.body,
-      user_id: request.statusMessage.user_id,
+      user_id: request.session.user_id,
     });
 
     response.status(200).json(newComment);

@@ -75,7 +75,7 @@ const newComment = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/blogPosts');
+      document.location.replace('/blogposts');
     } else {
       alert('Error: Comment failed');
     }
