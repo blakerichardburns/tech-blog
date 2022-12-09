@@ -22,7 +22,8 @@ const newBlogPost = async (event) => {
 };
 
 const updatePost = async (event) => {
-  const title = document.querySelector('post-title').value.trim();
+  event.preventDefault();
+
   const content = document.querySelector('post-content').value.trim();
 
   if (event.target.hasAttribute('data-id')) {
@@ -30,7 +31,7 @@ const updatePost = async (event) => {
 
     const response = await fetch(`/api/blogposts/${id}`, {
       method: 'PUT',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ content: newBlogContent }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -82,28 +83,6 @@ const newComment = async (event) => {
   }
 };
 
-// const updateComment = async (event) => {
-//   const comment = document.querySelector('comment').value.trim();
-
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
-
-//     const response = await fetch(`/api/comments/${id}`, {
-//       method: 'PUT',
-//       body: JSON.stringify({ comment }),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     });
-
-//     if (response.ok) {
-//       document.location.replace('/comments');
-//     } else {
-//       alert('Error: update failed');
-//     }
-//   }
-// };
-
 const deleteComment = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -111,7 +90,7 @@ const deleteComment = async (event) => {
     const response = await fetch(`/api/comments/${id}`, {
       method: 'DELETE',
     });
-    
+
     if (response.ok) {
       document.location.replace('/comments');
     } else {
@@ -120,14 +99,20 @@ const deleteComment = async (event) => {
   }
 };
 
-document.querySelector('.new-blog-post').addEventListener('submit', newBlogPost);
+document
+  .querySelector('.new-blog-post')
+  .addEventListener('submit', newBlogPost);
 
-document.querySelector('#update-post-button').addEventListener('click', updatePost);
+document
+  .querySelector('#update-post-button')
+  .addEventListener('click', updatePost);
 
-document.querySelector('#delete-post-button').addEventListener('click', deletePost);
+document
+  .querySelector('#delete-post-button')
+  .addEventListener('click', deletePost);
 
 document.querySelector('.new-comment').addEventListener('submit', newComment);
 
-// document.querySelector('#update-comment-button').addEventListener('click', updateComment);
-
-document.querySelector('#delete-post-button').addEventListener('click', deleteComment);
+document
+  .querySelector('#delete-post-button')
+  .addEventListener('click', deleteComment);
