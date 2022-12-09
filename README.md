@@ -10,7 +10,7 @@
 https://github.com/blakerichardburns/tech-blog
 
 ## Description
-
+Blog where users can post about all things Tech, and comment on each other's posts.
 
   ## Table of Contents
   * [Installation Instructions](#installation-instructions)
