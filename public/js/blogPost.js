@@ -5,7 +5,7 @@ const newBlogPost = async (event) => {
   const content = document.querySelector('post-content').value.trim();
 
   if (title && content) {
-    const response = await fetch(`/api/blogposts`, {
+    const response = await fetch(`/api/blogpost`, {
       method: 'POST',
       body: JSON.stringify({ title, content }),
       headers: {
@@ -29,7 +29,7 @@ const updatePost = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/blogposts/${id}`, {
+    const response = await fetch(`/api/blogpost/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ content: newBlogContent }),
       headers: {
@@ -49,7 +49,7 @@ const deletePost = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/blogposts/${id}`, {
+    const response = await fetch(`/api/blogpost/${id}`, {
       method: 'DELETE',
     });
 
@@ -76,7 +76,7 @@ const newComment = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/blogposts');
+      document.location.replace('/blogpost');
     } else {
       alert('Error: Comment failed');
     }
