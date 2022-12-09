@@ -100,7 +100,7 @@ const deleteComment = async (event) => {
 };
 
 document
-  .querySelector('.new-blog-post')
+  .querySelector('.#new-post-button')
   .addEventListener('submit', newBlogPost);
 
 document
@@ -114,5 +114,5 @@ document
 document.querySelector('.new-comment').addEventListener('submit', newComment);
 
 document
-  .querySelector('#delete-post-button')
+  .querySelector('#delete-comment-button')
   .addEventListener('click', deleteComment);
