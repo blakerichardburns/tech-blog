@@ -111,7 +111,7 @@ document
   .querySelector('#delete-post-button')
   .addEventListener('click', deletePost);
 
-document.querySelector('.new-comment').addEventListener('submit', newComment);
+document.querySelector('#new-comment').addEventListener('submit', newComment);
 
 document
   .querySelector('#delete-comment-button')

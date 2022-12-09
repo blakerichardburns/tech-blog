@@ -8,10 +8,13 @@
     <div class="col-md-4">
         <h3>Comments Section</h3>
         {{#if logged_in}}
-        <div class="form new-comment">
+        <div class="form comment-input">
             <div class="forms">
                 <label for="comment">Comment on this post:</label>
-                <textarea class="form-input" type="text" id="comment" />
+                <textarea class="form-input" type="text" id="new-comment" name="new-comment"></textarea>
+            </div>
+            <div class="forms">
+                <button type="submit" class="btn btn-primary">Post Comment</button>
             </div>
         </div>
         {{/if}}
