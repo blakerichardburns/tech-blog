@@ -1,0 +1,19 @@
+<div class="col-md-10">
+        <h3>Update Post:</h3>
+
+        <form class="form new-blog-post">
+            <div class="forms">
+                <label for="post-title">Title:</label>
+                <input class="form-input" type="text" value="{{blogpost.post_title}}" id="post-title" name="post-title" />
+            </div>
+            <div class="forms">
+                <label for="post-content">Content:</label>
+                <textarea class="form-input"  id="post-content" name="post-content">{{blogpost.content}}</textarea>
+            </div>
+            <div class="forms">
+                <button type="submit" class="btn btn-primary" id="new-post-button">Update!</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/updatePost.js"></script>

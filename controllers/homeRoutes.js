@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { response, request } = require('express');
 const { BlogPost, Comment, User } = require('../models');
+const authorized = require('../utils/authorization');
 const authorization = require('../utils/authorization');
 
 router.get('/', async (request, response) => {
@@ -60,7 +61,7 @@ router.get('/dashboard', authorization, async (request, response) => {
 
         response.render('dashboard', {
             ...user,
-            logged_in: true
+            logged_in: request.session.logged_in
         });
     } catch (error) {
         response.status(500).json(error);
@@ -74,6 +75,19 @@ router.get('/signup-login', (request, response) => {
     }
 
     response.render('signup-login');
+});
+
+router.get('/dashboard/:id', authorization, async (request, response) => {
+    try {
+        const postData = await BlogPost.findByPk(request.params.id)
+        const blogpost = postData.get({ plain: true })
+
+        response.render('updatePost', {
+            blogpost,
+            logged_in: request.session.logged_in})
+    } catch (error) {
+        response.status(500).json(error);
+    }
 });
 
 module.exports = router;
