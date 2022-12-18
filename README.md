@@ -1,10 +1,10 @@
 # tech-blog
 ## Week 14 Challenge: Model-View-Controller
 
-![Alt text](./public/assets/screenshot.JPG "Screenshot")
+<!-- ![Alt text](./public/assets/screenshot.JPG "Screenshot") -->
 
 ## Live Link
-
+https://bburns-tech-blog.herokuapp.com/
 
 ## Repository Link
 https://github.com/blakerichardburns/tech-blog
