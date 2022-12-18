@@ -1,4 +1,4 @@
-const newBlogPost = async (event) => {
+const newBlogpost = async (event) => {
   event.preventDefault();
 
   const post_title = document.querySelector('#post-title').value.trim();
@@ -38,8 +38,8 @@ const deletePost = async (event) => {
 };
 
 document
-  .querySelector('.new-blog-post')
-  .addEventListener('submit', newBlogPost);
+  .querySelector('.new-blogpost')
+  .addEventListener('submit', newBlogpost);
 
 document
   .querySelector('#delete-post-button')

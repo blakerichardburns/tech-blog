@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { response, request } = require('express');
-const { BlogPost, Comment, User } = require('../models');
+const { Blogpost, Comment, User } = require('../models');
 const authorized = require('../utils/authorization');
 const authorization = require('../utils/authorization');
 
 router.get('/', async (request, response) => {
     try {
-        const blogPostData = await BlogPost.findAll({
+        const blogpostData = await Blogpost.findAll({
             include: [
                 {
                     model: User,
@@ -15,9 +15,9 @@ router.get('/', async (request, response) => {
             ],
         });
 
-        const blogPosts = blogPostData.map((blogPost) => blogPost.get({ plain: true }));
+        const blogposts = blogpostData.map((blogpost) => blogpost.get({ plain: true }));
 
-        response.render('home', { blogPosts, logged_in: request.session.logged_in });
+        response.render('home', { blogposts, logged_in: request.session.logged_in });
     } catch (error) {
         console.log(error);
         response.status(500).json(error);
@@ -26,7 +26,7 @@ router.get('/', async (request, response) => {
 
 router.get('/blogpost/:id', async (request, response) => {
     try {
-        const blogPostData = await BlogPost.findByPk(request.params.id, {
+        const blogpostData = await Blogpost.findByPk(request.params.id, {
             include: [
                 {
                     model: User,
@@ -39,10 +39,10 @@ router.get('/blogpost/:id', async (request, response) => {
             ],
         });
 
-        const blogPost = blogPostData.get({ plain: true });
+        const blogpost = blogpostData.get({ plain: true });
 
-        response.render('blogPost', {
-            ...blogPost,
+        response.render('blogpost', {
+            ...blogpost,
             logged_in: request.session.logged_in
         });
     } catch (error) {
@@ -54,7 +54,7 @@ router.get('/dashboard', authorization, async (request, response) => {
     try {
         const userData = await User.findByPk(request.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: BlogPost }],
+            include: [{ model: Blogpost }],
         });
 
         const user = userData.get({ plain: true });
@@ -79,7 +79,7 @@ router.get('/signup-login', (request, response) => {
 
 router.get('/dashboard/:id', authorization, async (request, response) => {
     try {
-        const postData = await BlogPost.findByPk(request.params.id)
+        const postData = await Blogpost.findByPk(request.params.id)
         const blogpost = postData.get({ plain: true })
 
         response.render('updatePost', {

@@ -8,7 +8,7 @@
     <div class="col-md-10">
         <h3>Post a New Blog:</h3>
 
-        <form class="form new-blog-post">
+        <form class="form new-blogpost">
             <div class="forms">
                 <label for="post-title">Title:</label>
                 <input class="form-input" type="text" id="post-title" name="post-title" />
@@ -30,10 +30,10 @@
         {{#each blogposts as |blogpost|}}
         <div class="row">
             <div class="col-md-8">
-                <h4><a href="/blogPost/{{blogpost.id}}">{{blogpost.post_title}}</a></h4>
+                <h4><a href="/blogpost/{{blogpost.id}}">{{blogpost.post_title}}</a></h4>
             </div>
             <div class="col-md-4">
-                <a href="/blogPost/{{blogpost.id}}"><button class="btn btn-sm" id="update-post-button" data-id="{{blogpost.id}}">Update Post</button></a>
+                <a href="/blogpost/{{blogpost.id}}"><button class="btn btn-sm" id="update-post-button" data-id="{{blogpost.id}}">Update Post</button></a>
             </div>
             <div class="col-md-4">
                 <button class="btn btn-sm btn-danger" id="delete-post-button" data-id="{{blogpost.id}}">Delete Post</button>
