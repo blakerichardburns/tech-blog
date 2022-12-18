@@ -1,7 +1,7 @@
 <div class="text-center">
     <h2>{{post_title}}</h2>
     <p>Posted by {{user.user_name}} on {{format_date date_created}}</p>
-    <p>{{content}}</p>
+    <p>{{post_content}}</p>
 </div>
 
 <div class="row">
@@ -24,7 +24,7 @@
 
         {{#each comments as |comment|}}
         <div class="row">
-            <p>{{comment.content}}</p>
+            <p>{{comment.comment_content}}</p>
         </div>
         {{/each}}
         </div>

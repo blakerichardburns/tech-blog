@@ -8,7 +8,7 @@ const updatePost = async (event) => {
 
     const response = await fetch(`/api/blogpost/${id}`, {
       method: 'PUT',
-      body: JSON.stringify({ content: newBlogContent }),
+      body: JSON.stringify({ post_content: newBlogContent }),
       headers: {
         'Content-Type': 'application/json',
       },

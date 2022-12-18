@@ -67,24 +67,4 @@ router.post('/', authorized, async (request, response) => {
   }
 });
 
-router.delete('/:id', authorized, async (request, response) => {
-  try {
-    const commentData = await Comment.destroy({
-      where: {
-        id: request.params.id,
-        user_id: request.session.user_id,
-      },
-    });
-
-    if (!commentData) {
-      response.status(404).json({ message: 'Comment not found...' });
-      return;
-    }
-
-    response.status(200).json(commentData);
-  } catch (error) {
-    response.status(500).json(error);
-  }
-});
-
 module.exports = router;
