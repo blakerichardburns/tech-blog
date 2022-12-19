@@ -10,6 +10,7 @@ router.post('/', async (request, response) => {
     request.session.save(() => {
       request.session.user_id = userData.id;
       request.session.logged_in = true;
+      request.session.user_name = userData.user_name;
 
       response.status(200).json(userData);
     });
@@ -43,6 +44,7 @@ router.post('/login', async (request, response) => {
     request.session.save(() => {
       request.session.user_id = userData.id;
       request.session.logged_in = true;
+      request.session.user_name = userData.user_name;
 
       response.json({ user: userData, message: 'Login successful.' });
     });

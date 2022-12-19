@@ -24,6 +24,7 @@ const newBlogpost = async (event) => {
 
 const deletePost = async (event) => {
   if (event.target.hasAttribute('data-id')) {
+    console.log("asjkljklasdfkdfs");
     const id = event.target.getAttribute('data-id');
 
     const response = await fetch(`/api/blogpost/${id}`, {
@@ -42,6 +43,7 @@ document
   .querySelector('.new-blogpost')
   .addEventListener('submit', newBlogpost);
 
-document
-  .querySelector('.delete-post-button')
-  .addEventListener('click', deletePost);
+  document.querySelectorAll('#delete-post-button')
+    .forEach(element => {
+      element.addEventListener('click', deletePost)
+    });

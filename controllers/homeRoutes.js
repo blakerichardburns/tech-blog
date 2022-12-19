@@ -16,7 +16,7 @@ router.get('/', async (request, response) => {
 
         const blogposts = blogpostData.map((blogpost) => blogpost.get({ plain: true }));
 
-        response.render('home', { blogposts, logged_in: request.session.logged_in });
+        response.render('home', { blogposts, logged_in: request.session.logged_in, user_name: request.session.user_name });
     } catch (error) {
         console.log(error);
         response.status(500).json(error);
@@ -42,7 +42,7 @@ router.get('/blogpost/:id', async (request, response) => {
 
         response.render('blogpost', {
             ...blogpost,
-            logged_in: request.session.logged_in
+            logged_in: request.session.logged_in, user_name: request.session.user_name
         });
     } catch (error) {
         response.status(500).json(error);
@@ -60,7 +60,7 @@ router.get('/dashboard', authorized, async (request, response) => {
 
         response.render('dashboard', {
             ...user,
-            logged_in: request.session.logged_in
+            logged_in: request.session.logged_in, user_name: request.session.user_name
         });
     } catch (error) {
         response.status(500).json(error);
@@ -83,7 +83,7 @@ router.get('/blogpost/:id/update', authorized, async (request, response) => {
 
         response.render('updatePost', {
             blogpost,
-            logged_in: request.session.logged_in})
+            logged_in: request.session.logged_in, user_name: request.session.user_name})
     } catch (error) {
         response.status(500).json(error);
     }

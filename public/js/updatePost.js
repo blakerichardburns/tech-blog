@@ -1,6 +1,8 @@
 const updatePost = async (event) => {
   event.preventDefault();
 
+  console.log("something");
+
   const newBlogTitle = document.querySelector('#post-title').value.trim();
   const newBlogContent = document.querySelector('#post-content').value.trim();
 
@@ -24,5 +26,5 @@ const updatePost = async (event) => {
 };
 
 document
-  .querySelector('.update-post-button')
+  .querySelector('#update-post-button')
   .addEventListener('click', updatePost);
