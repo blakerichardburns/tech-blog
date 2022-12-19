@@ -18,6 +18,7 @@ const newBlogpost = async (event) => {
     } else {
       alert('Error: Post failed');
     }
+    
   }
 };
 
@@ -42,5 +43,5 @@ document
   .addEventListener('submit', newBlogpost);
 
 document
-  .querySelector('#delete-post-button')
+  .querySelector('.delete-post-button')
   .addEventListener('click', deletePost);

@@ -32,10 +32,10 @@
             <div class="col-md-8">
                 <h4><a href="/blogpost/{{blogpost.id}}">{{blogpost.post_title}}</a></h4>
             </div>
-            <div class="col-md-4">
-                <a href="/blogpost/{{blogpost.id}}"><button class="btn btn-sm" id="update-post-button" data-id="{{blogpost.id}}">Update Post</button></a>
+            <div class="update-post-button">
+                <a href="/blogpost/{{blogpost.id}}/update"><button class="btn btn-sm" id="update-post-button" data-id="{{blogpost.id}}">Update Post</button></a>
             </div>
-            <div class="col-md-4">
+            <div class="delete-post-button">
                 <button class="btn btn-sm btn-danger" id="delete-post-button" data-id="{{blogpost.id}}">Delete Post</button>
             </div>
         </div>

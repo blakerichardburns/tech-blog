@@ -76,7 +76,7 @@ router.get('/signup-login', (request, response) => {
     response.render('signup-login');
 });
 
-router.get('/dashboard/:id', authorized, async (request, response) => {
+router.get('/blogpost/:id/update', authorized, async (request, response) => {
     try {
         const postData = await Blogpost.findByPk(request.params.id)
         const blogpost = postData.get({ plain: true })
