@@ -12,6 +12,9 @@
     <div class="flex-column justify-space-around">
         <header class="display-flex justify-space-between align-center p-2">
             <h1>Blog of Technology</h1>
+            {{#if logged_in}}
+            <h3>Good to see you, {{user_name}}!</h3>
+            {{/if}}
             <nav>
                 <a href="/">Homepage</a>
                 {{#if logged_in}}

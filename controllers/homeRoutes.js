@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { response, request } = require('express');
 const { Blogpost, Comment, User } = require('../models');
 const authorized = require('../utils/authorization');
-const authorization = require('../utils/authorization');
 
 router.get('/', async (request, response) => {
     try {
@@ -50,7 +49,7 @@ router.get('/blogpost/:id', async (request, response) => {
     }
 });
 
-router.get('/dashboard', authorization, async (request, response) => {
+router.get('/dashboard', authorized, async (request, response) => {
     try {
         const userData = await User.findByPk(request.session.user_id, {
             attributes: { exclude: ['password'] },
@@ -77,7 +76,7 @@ router.get('/signup-login', (request, response) => {
     response.render('signup-login');
 });
 
-router.get('/dashboard/:id', authorization, async (request, response) => {
+router.get('/dashboard/:id', authorized, async (request, response) => {
     try {
         const postData = await Blogpost.findByPk(request.params.id)
         const blogpost = postData.get({ plain: true })

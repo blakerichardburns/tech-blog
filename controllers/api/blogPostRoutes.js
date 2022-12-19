@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { response } = require('express');
 const { request } = require('http');
-const { Blogpost, Comment } = require('../../models');
+const { Blogpost } = require('../../models');
 const authorized = require('../../utils/authorization');
 
 router.post('/', authorized, async (request, response) => {
@@ -51,19 +51,6 @@ router.delete('/:id', authorized, async (request, response) => {
     response.status(200).json(blogpostData);
   } catch (error) {
     response.status(500).json(error);
-  }
-});
-
-router.post('/', authorized, async (request, response) => {
-  try {
-    const newComment = await Comment.create({
-      ...request.body,
-      user_id: request.session.user_id,
-    });
-
-    response.status(200).json(newComment);
-  } catch (error) {
-    response.status(400).json(error);
   }
 });
 
