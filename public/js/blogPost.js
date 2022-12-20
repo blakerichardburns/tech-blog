@@ -4,7 +4,7 @@ const newComment = async (event) => {
   const comment_content = document.querySelector('#new-comment').value.trim();
 
   if (comment_content) {
-    const response = await fetch(`/api/comment`, {
+    const response = await fetch(`/`, {
       method: 'POST',
       body: JSON.stringify({ comment_content }),
       headers: {
