@@ -4,7 +4,7 @@ const newComment = async (event) => {
   const comment_content = document.querySelector('#new-comment').value.trim();
 
   if (comment_content) {
-    const response = await fetch(`/`, {
+    const response = await fetch(`/api/blogpost/:id/comment`, {
       method: 'POST',
       body: JSON.stringify({ comment_content }),
       headers: {
@@ -13,7 +13,7 @@ const newComment = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/blogpost');
+      document.location.replace('/blogpost/:id');
     } else {
       alert('Error: Comment failed');
     }
