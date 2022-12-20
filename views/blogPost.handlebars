@@ -8,7 +8,7 @@
     <div class="col-md-4">
         <h3>Comments Section</h3>
         {{#if logged_in}}
-        <form class="form comment-input">
+        <form class="form comment-input" data-id="{{id}}">
             <div class="forms">
                 <label for="new-comment">Comment on this post:</label>
                 <input class="form-input" type="text" id="new-comment" name="new-comment"></input>
