@@ -1,0 +1,73 @@
+:root {
+    --tech-white: #ffffff;
+    --tech-black: #222222;
+    --tech-green: #04b121ea;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* html {
+    height: 100%;
+  } */
+  
+/* body {
+    display: flex;
+    min-height: 100%;
+    line-height: 1;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 100%;
+    background-color: var(--tech-black);
+    color: var(--tech-green);
+} */
+
+/* button {
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--tech-white);
+    background-color: var(--tech-green);
+    border-color: var(--tech-white);
+    border-style: solid;
+    border-width: 10%;
+    border-radius: 10%;
+  } */
+
+/* header {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0.5%;
+    padding: 1%;
+    border-style: solid;
+    border-color: var(--tech-green);
+} */
+
+/* h1 {
+    font-size: 500%;
+    margin: 0.25%;
+    padding: 0.25%;
+} */
+
+/* nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 60%;
+    margin: 0.5%;
+    padding: 1.5%;
+    font-size: 150%;
+} */
+
+/* header h3 {
+
+} */
+
+/* nav a {
+    padding: 1%;
+} */
