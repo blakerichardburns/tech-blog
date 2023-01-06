@@ -1,8 +1,6 @@
 const updatePost = async (event) => {
   event.preventDefault();
 
-  console.log("something");
-
   const newBlogTitle = document.querySelector('#post-title').value.trim();
   const newBlogContent = document.querySelector('#post-content').value.trim();
 
@@ -11,7 +9,10 @@ const updatePost = async (event) => {
 
     const response = await fetch(`/api/blogpost/${id}`, {
       method: 'PUT',
-      body: JSON.stringify({ post_title: newBlogTitle, post_content: newBlogContent }),
+      body: JSON.stringify({
+        post_title: newBlogTitle,
+        post_content: newBlogContent,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },

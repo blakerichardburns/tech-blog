@@ -18,13 +18,11 @@ const newBlogpost = async (event) => {
     } else {
       alert('Error: Post failed');
     }
-    
   }
 };
 
 const deletePost = async (event) => {
   if (event.target.hasAttribute('data-id')) {
-    console.log("asjkljklasdfkdfs");
     const id = event.target.getAttribute('data-id');
 
     const response = await fetch(`/api/blogpost/${id}`, {
@@ -39,11 +37,8 @@ const deletePost = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-blogpost')
-  .addEventListener('submit', newBlogpost);
+document.querySelector('.new-blogpost').addEventListener('submit', newBlogpost);
 
-  document.querySelectorAll('#delete-post-button')
-    .forEach(element => {
-      element.addEventListener('click', deletePost)
-    });
+document.querySelectorAll('#delete-post-button').forEach((element) => {
+  element.addEventListener('click', deletePost);
+});
