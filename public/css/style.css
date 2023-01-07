@@ -2,31 +2,52 @@
     --tech-white: #ffffff;
     --tech-black: #222222;
     --tech-green: #04b121ea;
+    --tech-purple: #a10f8d;
+    --tech-red: #ff0000;
 }
 
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+}
 
-/* html {
+html {
     height: 100%;
-  } */
+  }
   
-/* body {
-    display: flex;
+body {
     min-height: 100%;
-    line-height: 1;
+    line-height: normal;
     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     font-size: 100%;
     background-color: var(--tech-black);
     color: var(--tech-green);
-} */
+}
 
-/* button {
+a {
+    color: var(--tech-purple);
+    border-radius: 10%;
+    height: 1%;
+  }
+  
+a:visited {
+    color: var(--tech-green);
+}
+
+a:hover {
+    color: var(--tech-purple);
+    background-color: var(--tech-white);
+}
+
+a:active {
+    color: var(--tech-green);
+}
+
+button {
     margin: 1%;
     padding: 1%;
+    font-size: 75%;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
@@ -36,25 +57,36 @@
     border-style: solid;
     border-width: 10%;
     border-radius: 10%;
-  } */
+  }
 
-/* header {
+button:hover {
+    background-color: var(--tech-purple);
+}
+
+button:active {
+    background-color: var(--tech-white);
+    color: var(--tech-green);
+}
+
+header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     width: 95%;
     margin: 0.5%;
     padding: 1%;
     border-style: solid;
     border-color: var(--tech-green);
-} */
+}
 
-/* h1 {
-    font-size: 500%;
+h1 {
+    width: 50%;
+    font-size: 250%;
     margin: 0.25%;
     padding: 0.25%;
-} */
+}
 
-/* nav {
+nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -62,12 +94,50 @@
     margin: 0.5%;
     padding: 1.5%;
     font-size: 150%;
-} */
+    text-decoration: underline;
+}
 
-/* header h3 {
+header h3 {
+    width: 50%;
+    font-size: 125%;
+    color: var(--tech-purple);
+}
 
-} */
+span {
+    font-size: 200%;
+    color: var(--tech-white);
+}
 
-/* nav a {
+nav a {
     padding: 1%;
-} */
+}
+
+.blog-post {
+    margin: 1%;
+    padding: 1%;
+    border-style: solid;
+    border-radius: 10%;
+    border-color: var(--tech-purple);
+}
+
+h2 {
+    margin: 1%;
+    padding: 1%;
+    font-size: 300%;
+}
+
+.timestamp {
+    color: var(--tech-purple);
+    font-size: 125%;
+}
+
+.blog-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1%;
+    padding: 1%;
+    border-style: solid;
+    border-radius: 5%;
+    border-color: var(--tech-white);
+    overflow: hidden;
+}
