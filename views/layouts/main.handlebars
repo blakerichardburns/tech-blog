@@ -14,7 +14,7 @@
         <header class="display-flex justify-space-between align-center p-2">
             <h1>Blog of Technology</h1>
             {{#if logged_in}}
-            <h3>Logged-In as: <span>{{user_name}}</span></h3>
+            <p class="logged-in">Logged-In as: <span id="header-user">{{user_name}}</span></p>
             {{/if}}
             <nav>
                 <a href="/">Homepage</a>

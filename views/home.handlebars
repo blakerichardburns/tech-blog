@@ -1,14 +1,14 @@
 {{#each blogposts as |blogpost| }}
 <div class="row blog-post">
-    <div class="row-md-6">
+    <div>
         <h2>
             <a href="/blogpost/{{blogpost.id}}">{{blogpost.post_title}}</a>
         </h2>
         <p class="timestamp">
-            Posted by {{blogpost.user.user_name}} on {{format_date blogpost.date_created}}
+            Posted by <span id="post-user">{{blogpost.user.user_name}}</span> on {{format_date blogpost.date_created}}
         </p>
     </div> 
-    <div class="col-md-8">
+    <div>
         <p class="blog-content">
             {{blogpost.post_content}}
         </p>

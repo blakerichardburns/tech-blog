@@ -1,47 +1,46 @@
-<div class="row">
-    <div class="col-auto">
-        <h2>{{user_name}}'s Blog Posts</h2>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-10">
-        <h3>Post a New Blog:</h3>
-
-        <form class="form new-blogpost">
-            <div class="forms">
-                <label for="post-title">Title:</label>
-                <input class="form-input" type="text" id="post-title" name="post-title" />
-            </div>
-            <div class="forms">
-                <label for="post-content">Content:</label>
-                <textarea class="form-input" id="post-content" name="post-content"></textarea>
-            </div>
-            <div class="forms">
-                <button type="submit" class="btn btn-primary" id="new-post-button">Post!</button>
-            </div>
-        </form>
+<div class="dashboard">
+    <div class="col-auto" id="dashboard-header">
+        <h2>{{user_name}}'s <span id="dashboard-span">Blog Posts</span></h2>
     </div>
 
-    {{#if blogposts.length}}
-    <div class="col-md-8 blogpost-list">
-        <h3>Previous Posts:</h3>
-
-        {{#each blogposts as |blogpost|}}
-        <div class="row">
-            <div class="col-md-8">
-                <h4><a href="/blogpost/{{blogpost.id}}">{{blogpost.post_title}}</a></h4>
-            </div>
-            <div class="update-post-button">
-                <a href="/blogpost/{{blogpost.id}}/update"><button class="btn btn-sm" id="update-post-button" data-id="{{blogpost.id}}">Update Post</button></a>
-            </div>
-            <div class="delete-post-button">
-                <button class="btn btn-sm btn-danger" id="delete-post-button" data-id="{{blogpost.id}}">Delete Post</button>
-            </div>
+    <div class="dashboard-blogposts">
+        <div class="new-blogpost">
+            <h3>Post a New Blog</h3>
+            <form class="form new-blogpost-form">
+                <div class="forms">
+                    <label for="post-title">Title:</label>
+                    <input class="form-input" type="text" id="post-title" name="post-title" />
+                </div>
+                <div class="forms">
+                    <label for="post-content">Content:</label>
+                    <textarea class="form-input" id="post-content" name="post-content"></textarea>
+                </div>
+                <div class="forms">
+                    <button type="submit" id="new-post-button">Post!</button>
+                </div>
+            </form>
         </div>
-        {{/each}}
+
+        {{#if blogposts.length}}
+        <div class="blogpost-list">
+            <h3>Previous Posts:</h3>
+            {{#each blogposts as |blogpost|}}
+            <div class="row previous-posts">
+                <div class="delete-post-button">
+                    <button id="delete-post-button" data-id="{{blogpost.id}}">Delete Post</button>
+                </div>
+                <div class="update-post-button">
+                    <a href="/blogpost/{{blogpost.id}}/update"><button id="update-post-button" data-id="{{blogpost.id}}">Update Post</button></a>
+                </div>
+                <div id="blogpost-list-names">
+                    <h4><a href="/blogpost/{{blogpost.id}}">{{blogpost.post_title}}</a></h4>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{else}}    
+        {{/if}}
     </div>
-    {{/if}}
 </div>
 
 <script src="/js/dashboard.js"></script>
