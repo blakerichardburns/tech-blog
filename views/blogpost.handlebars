@@ -1,34 +1,41 @@
-<div class="text-center">
-    <h2>{{post_title}}</h2>
-    <p>Posted by {{user.user_name}} on {{format_date date_created}}</p>
-    <p>{{post_content}}</p>
-</div>
+<div class="blogpost-page">
+    <div class="post">
+        <h2 id="post-title">{{post_title}}</h2>
+        <p class="timestamp">Posted by <span id="post-user">{{user.user_name}}</span> on {{format_date date_created}}</p>
+        <p>{{post_content}}</p>
+    </div>
 
-<div class="row">
-    <div class="col-md-4">
-        {{#if logged_in}}
-        <h3>Comments Section</h3>
-        <form class="form comment-input" data-id="{{id}}">
-            <div class="forms">
-                <label for="new-comment">Comment on this post:</label>
-                <input class="form-input" type="text" id="new-comment" name="new-comment"></input>
-            </div>
-            <div class="forms">
-                <button type="submit" class="btn btn-primary">Post Comment</button>
-            </div>
-        </form>
-        {{/if}}
-        {{#if comments.length}}
-        <div class="col-md-6 comments">
-        <h4>Comments</h4>
+    <div class="comments-section">
+        <div>
+            <h3 id="comments-header">Comments Section</h3>
+            {{#if logged_in}}
+            <form class="form comment-input" data-id="{{id}}">
+                <div class="forms">
+                    <label for="new-comment" id="comment-instruction">Comment on this post:</label>
+                    <input class="form-input" type="text" id="new-comment" name="new-comment"></input>
+                </div>
+                <div class="forms">
+                    <button type="submit" id="post-comment-button">Post Comment</button>
+                </div>
+            {{else}}
+                <a href="/signup-login" id="comment-signin">Sign In to Comment</a>
+            </form>
+            {{/if}}
+            {{#if comments.length}}
+            <div class="comments">
+                <h4 id="comments-header">Comments</h4>
 
-        {{#each comments as |comment|}}
-        <div class="row">
-            <p>{{comment.comment_content}}</p>
+                {{#each comments as |comment|}}
+                <div class="comment-box">
+                    <p id="comment">"{{comment.comment_content}}"</p>
+                    <p id="comment-signature">-According to <span id="comment-user">{{comment.user_id}}</span> on {{comment.date_created}}</p>
+                </div>
+                {{/each}}
+            </div>
+            {{else}}
+            <div id="no-comments">No Comments yet!</div>
+            {{/if}}
         </div>
-        {{/each}}
-        </div>
-        {{/if}}
     </div>
 </div>
 

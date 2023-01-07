@@ -1,19 +1,19 @@
-<div class="col-md-10">
-        <h3>Update Post:</h3>
+<div class="update-post-page">
+    <h3>Update Post:</h3>
 
-        <form class="form update-post-button">
-            <div class="forms">
-                <label for="post-title">Title:</label>
-                <input class="form-input" type="text" value="{{blogpost.post_title}}" id="post-title" name="post-title" />
-            </div>
-            <div class="forms">
-                <label for="post-content">Content:</label>
-                <textarea class="form-input"  id="post-content" name="post-content">{{blogpost.post_content}}</textarea>
-            </div>
-            <div class="forms">
-                <button type="submit" class="btn btn-primary" id="update-post-button" data-id="{{blogpost.id}}">Update!</button>
-            </div>
-        </form>
-    </div>
+    <form class="form update-post-form">
+        <div class="forms">
+            <label for="update-post-title">Title:</label>
+            <input class="form-input" type="text" value="{{blogpost.post_title}}" id="update-post-title" name="update-post-title" />
+        </div>
+        <div class="forms">
+            <label for="update-post-content">Content:</label>
+            <textarea class="form-input"  id="update-post-content" name="update-post-content">{{blogpost.post_content}}</textarea>
+        </div>
+        <div class="forms">
+            <button type="submit" id="update-post-button" data-id="{{blogpost.id}}">Update!</button>
+        </div>
+    </form>
+</div>
 
-    <script src="/js/updatePost.js"></script>
+<script src="/js/updatePost.js"></script>

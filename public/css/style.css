@@ -137,6 +137,7 @@ h2 {
 .timestamp {
     color: var(--tech-purple);
     font-size: 125%;
+    text-align: center;
 }
 
 #post-user {
@@ -204,11 +205,11 @@ h2 {
     padding: 1%;
 }
 
-.new-blogpost, .blogpost-list {
+.new-blogpost,
+.blogpost-list {
     width: 45%;
     margin: 1%;
     padding: 1%;
-    
 }
 
 h3 {
@@ -233,17 +234,13 @@ textarea {
 
 .previous-posts {
     flex-direction: row-reverse;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     width: 115%;
     color: var(--tech-purple);
     margin: 1%;
     padding: 1%;
     border-style: solid;
     border-color: var(--tech-purple);
-}
-
-#blogpost-list-names {
-  
 }
 
 h4 {
@@ -262,4 +259,97 @@ h4 {
     color: var(--tech-white);
     border-style: solid;
     border-color: var(--tech-white);
+}
+
+.blogpost-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 140%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.post {
+    width: 60%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.comments-section {
+    width: 35%;
+    margin: 1%;
+    padding: 1%;
+}
+
+#post-title {
+    display: flex;
+    justify-content: center;
+    color: var(--tech-green);
+}
+
+#comments-header {
+    text-align: center;
+    color: var(--tech-white);
+    font-size: 200%;
+}
+
+#post-comment-button {
+    
+}
+
+#comment-instruction {
+    color: var(--tech-purple);
+}
+
+#comment-signin  {
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    padding: 1%;
+    font-size: 175%;
+}
+
+#no-comments {
+    color: var(--tech-purple);
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    padding: 1%;
+    font-size: 150%;
+}
+
+.comments {
+    margin: 1%;
+    padding: 1%;
+}
+
+.comment-box {
+    color: #a10f8d;
+    margin: 1%;
+    padding: 1%;
+    border-style: solid;
+    border-color: var(--tech-white);
+}
+
+#comment-signature {
+    text-align: right;
+    color: var(--tech-green);
+}
+
+#comment-user {
+    color: var(--tech-white);
+}
+
+.update-post-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+
+.update-post-form {
+    color: var(--tech-purple);
 }
