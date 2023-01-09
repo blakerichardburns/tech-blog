@@ -28,7 +28,7 @@
                 {{#each comments as |comment|}}
                 <div class="comment-box">
                     <p id="comment">"{{comment.comment_content}}"</p>
-                    <p id="comment-signature">-According to <span id="comment-user">{{comment.user_id}}</span> on {{comment.date_created}}</p>
+                    <p id="comment-signature">-According to <span id="comment-user">{{comment.user.user_name}}</span> on {{format_date comment.date_created}}</p>
                 </div>
                 {{/each}}
             </div>
