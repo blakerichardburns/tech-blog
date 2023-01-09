@@ -39,7 +39,7 @@ router.get('/blogpost/:id', async (request, response) => {
         },
         {
           model: Comment,
-          include: [User]
+          include: [User],
         },
       ],
     });

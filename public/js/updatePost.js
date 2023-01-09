@@ -1,8 +1,12 @@
 const updatePost = async (event) => {
   event.preventDefault();
 
-  const newBlogTitle = document.querySelector('#update-post-title').value.trim();
-  const newBlogContent = document.querySelector('#update-post-content').value.trim();
+  const newBlogTitle = document
+    .querySelector('#update-post-title')
+    .value.trim();
+  const newBlogContent = document
+    .querySelector('#update-post-content')
+    .value.trim();
 
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');

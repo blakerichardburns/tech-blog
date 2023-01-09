@@ -26,15 +26,17 @@
             <h3>Previous Posts:</h3>
             {{#each blogposts as |blogpost|}}
             <div class="row previous-posts">
-                <div class="delete-post-button">
-                    <button id="delete-post-button" data-id="{{blogpost.id}}">Delete Post</button>
+                <div>
+                    <h4 id="blogpost-list-names"><a href="/blogpost/{{blogpost.id}}">{{blogpost.post_title}}</a></h4>
                 </div>
+            <div class="dashboard-buttons">
                 <div class="update-post-button">
                     <a href="/blogpost/{{blogpost.id}}/update"><button id="update-post-button" data-id="{{blogpost.id}}">Update Post</button></a>
                 </div>
-                <div id="blogpost-list-names">
-                    <h4><a href="/blogpost/{{blogpost.id}}">{{blogpost.post_title}}</a></h4>
+                <div class="delete-post-button">
+                    <button id="delete-post-button" data-id="{{blogpost.id}}">Delete Post</button>
                 </div>
+            </div>
             </div>
             {{/each}}
         </div>
