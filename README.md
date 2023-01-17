@@ -1,4 +1,4 @@
-# tech-blog
+# Tech Blog
 Module 14 Challenge: Model-View-Controller
 
 ![Alt text](./public/assets/screenshot.JPG "Screenshot")
@@ -15,10 +15,14 @@ Designed to test the developer's skills related to the Model-View-Controller pat
 
   ## Table of Contents
   * [Installation Instructions](#installation-instructions)
+  * [Usage Information](#usage-information)
   * [Questions](#questions)
 
   ## Installation Instructions
   express, sequelize, path, bcrypt
+
+  ## Usage Information
+  N/A
 
   ## Questions
   For any inquiries, spam by inbox here: blakerichardburns@gmail.com

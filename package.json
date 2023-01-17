@@ -1,7 +1,7 @@
 {
   "name": "tech-blog",
   "version": "1.0.0",
-  "description": "![Alt text](./public/assets/screenshot.JPG \"Screenshot\")",
+  "description": "Blogging website for tech geeks to come together and geek out on all things tech. Designed to test the developer's skills related to the Model-View-Controller pattern",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/blakerichardburns/tech-blog.git"
   },
-  "author": "",
+  "author": "Blake Burns",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/blakerichardburns/tech-blog/issues"
