@@ -1,5 +1,5 @@
 # tech-blog
-Week 14 Challenge: Model-View-Controller
+Module 14 Challenge: Model-View-Controller
 
 ![Alt text](./public/assets/screenshot.JPG "Screenshot")
 
